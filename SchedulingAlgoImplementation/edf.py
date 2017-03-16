@@ -2,10 +2,9 @@ import string
 import random
 from prime import lcm
 
-#A task instance
 class TaskIns(object):
 
-     #Constructor (should only be invoked with keyword parameters)
+    
     def __init__(self, start, end, priority, name):
         self.start    = start
         self.end      = end
@@ -14,18 +13,17 @@ class TaskIns(object):
         self.name     = name.replace("\n", "")
         self.id = int(random.random() * 10000)
 
-    #Allow an instance to use the cpu (periodic)
     def use(self, usage):
         self.usage += usage
         if self.usage >= self.end - self.start:
             return True
         return False
     
-    #Default representation
-    def __repr__(self):
+  
+   def __repr__(self):
         return str(self.name) + "#" + str(self.id) + " - start: " + str(self.start) + " priority: " + str(self.priority) + budget_text
 
-    #Get name as Name#id
+    
     def get_unique_name(self):
         return str(self.name)
 
