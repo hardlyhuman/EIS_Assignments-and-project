@@ -1,0 +1,135 @@
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>Developers</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="description" content="Developers" />
+        <link rel="stylesheet" href='{% static "developers/css/style.css" %}' type="text/css" media="screen"/>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            body{
+                font-family:Arial;
+                background-image: url('{% static "developers/back.jpg" %}');
+				background-size: cover;
+            }
+            a{
+                color:#444;
+            }
+            a:hover{
+                color:#999;
+            }
+            #content{
+                margin:0 auto;
+            }
+            .reference{
+                clear:both;
+                top:300px;
+                left:0px;
+                position:absolute;
+                text-align:right;
+                width:400px;
+                padding:20px;
+                background-color:#fff;
+                -moz-box-shadow:1px 3px 15px #ddd;
+                -webkit-box-shadow:1px 3px 15px #ddd;
+                box-shadow:1px 3px 15px #ddd;
+            }
+            .reference p a{
+                text-transform:uppercase;
+                text-shadow:1px 1px 1px #fff;
+                color:#666;
+                text-decoration:none;
+                font-size:10px;
+            }
+            .reference p a:hover{
+                color:#333;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="content">
+
+            <ul class="accordion" id="accordion">
+                <li class="bg1">
+                    <div class="heading">Baba</div>
+                    <div class="bgDescription"></div>
+                    <div class="description">
+                        <h2>Baba</h2>
+                        <!--p>Neem Ka Patta Kadwa hai...</p-->
+						<!--p>Indro Baba Bhadwa hai...</p-->
+                        <!--p>He completed Jessica Jones Season 1 in a day!</p-->
+                        <p>Roll No:201501024</p>
+                    </div>
+                </li>
+                <li class="bg2">
+                    <div class="heading">Soham</div>
+                    <div class="bgDescription"></div>
+                    <div class="description">
+                        <h2>Soham</h2>
+                        <!--p>He is working on the back-end of the Web Portal along with Kushal.</p-->
+                        <p>Roll No:201501049</p>
+                    </div>
+
+                </li>
+                <li class="bg3">
+                    <div class="heading">Lakshmi Narayan</div>
+                    <div class="bgDescription"></div>
+                    <div class="description">
+                        <h2>Lakshmi Narayana</h2>
+                        <!--p>He worked on the authentication part of the Web Portal.</p-->
+                        <p>Roll No:2017010..</p>
+                    </div>
+
+                </li>
+                <li class="bg4 bleft">
+                    <div class="heading">Kushal</div>
+                    <div class="bgDescription"></div>
+                    <div class="description">
+                        <h2>Kushal</h2>
+                        <!--p>He is working on the both front and back end of the Web Portal along with Soham for this Project.</p-->
+                        <p>Roll No:201511025</p>
+                    </div>
+					
+                </li>
+				<li class="bg5 bleft">
+                    <div class="heading">Sri Harsha</div>
+                    <div class="bgDescription"></div>
+                    <div class="description">
+                        <h2>Sri Harsha</h2>
+                        <!--p>He is working on hardware.</p-->
+                        <p>Roll No:201501020</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- The JavaScript -->
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('#accordion > li').hover(
+                    function () {
+                        var $this = $(this);
+                        $this.stop().animate({'width':'480px'},500);
+                        $('.heading',$this).stop(true,true).fadeOut();
+                        $('.bgDescription',$this).stop(true,true).slideDown(500);
+                        $('.description',$this).stop(true,true).fadeIn();
+                    },
+                    function () {
+                        var $this = $(this);
+                        $this.stop().animate({'width':'115px'},1000);
+                        $('.heading',$this).stop(true,true).fadeIn();
+                        $('.description',$this).stop(true,true).fadeOut(500);
+                        $('.bgDescription',$this).stop(true,true).slideUp(700);
+                    }
+                );
+            });
+        </script>
+    </body>
+</html>

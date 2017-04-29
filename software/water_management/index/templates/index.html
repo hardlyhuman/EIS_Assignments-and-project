@@ -1,0 +1,133 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Water Management Project</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src='{% static "index/js/jquery.min.js" %}'></script>
+		<script src='{% static "index/js/jquery.dropotron.min.js" %}'></script>
+		<script src='{% static "index/js/jquery.scrolly.min.js" %}'></script>
+		<script src='{% static "index/js/jquery.onvisible.min.js" %}'></script>
+		<script src='{% static "index/js/skel.min.js" %}'></script>
+		<script src='{% static "index/js/skel-layers.min.js" %}'></script>
+		<script src='{% static "index/js/init.js" %}'></script>
+		<!--noscript-->
+			<link rel="stylesheet" href='{% static "index/css/skel.css" %}' />
+			<link rel="stylesheet" href='{% static "index/css/style.css" %}' />
+			<link rel="stylesheet" href='{% static "index/css/style-desktop.css" %}' />
+			<link rel="stylesheet" href='{% static "index/css/style-noscript.css" %}' />
+		<!--/noscript-->
+		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	</head>
+	<body class="homepage">
+
+		<!-- Header -->
+			<div id="header">
+				<!-- Inner -->
+					<div class="inner">
+						<header>
+							<h1><a href="index.html" id="logo">Water Management</a></h1>
+                            <h1><a href="index.html" id="logo">Project</a></h1>
+							<hr />
+							<p>”To a Thirsty man, a drop of water is worth more than a sack of gold.”</p>
+						</header>
+						<footer>
+							<a href="#banner" class="button circled scrolly">Enter</a>
+						</footer>
+					</div>
+				
+				<!-- Nav -->
+					<nav id="nav">
+                        <script language="JavaScript"> 
+                            var myDate = new Date();   /* hour is before noon */ 
+                            if ( myDate.getHours() >= 3 && myDate.getHours() < 12)  
+                            {     
+                                document.write("<ul>"+"<li>"+"Good Morning !"+"</li>"+"</ul>"); 
+                            } 
+                            else if ( myDate.getHours() >= 12 && myDate.getHours() <= 17 ) /* Hour is from noon to 5pm (actually to 5:59 pm) */ 
+                            {     
+                                document.write("<ul>"+"<li>"+"Good Afternoon !"+"</li>"+"</ul>"); 
+                            } 
+                            else if ( myDate.getHours() > 17 && myDate.getHours() <= 24 ) /* the hour is after 5pm, so it is between 6pm and midnight */
+                            {     
+                                document.write("<ul>"+"<li>"+"Good Evening !"+"</li>"+"</ul>"); 
+                            } 
+                            else  /* the hour is not between 0 and 24, so something is wrong */
+                            {     
+                                document.write("<ul>"+"</li>"+"Go to sleep Motherfucker !"+"</li>"+"</ul>"); 
+                            }  
+                        </script>
+					</nav>
+
+			</div>
+			
+		<!-- Banner -->
+			<section id="banner">
+				<header>
+					<h2>Hi. You're looking at <strong>Water Management Project</strong>.</h2 >
+					<p style="font-size:90%;">
+						<strong>
+							Water, once an abundant natural resource, is becoming a more valuable commodity due to droughts and overuse. 
+							That's why Water Management is important.
+							<br>
+							It's a Raspberry Pi based project that monitors the amount of water consumed by Households.
+							<br>
+							The tentative plan is to display the consumption details on Django Based Web Portal.
+						</strong>
+					</p>
+				</header>
+			</section>
+
+		<!-- Carousel -->
+			<section class="carousel">
+				<div class="reel">
+
+					<article>
+						<a href="{% url 'Login' %}" class="image featured"><img src='{% static "index/images/Login1.jpg" %}' alt="" /></a>
+						<header>
+							<h3><a href="{% url 'Login' %}">Login or SignUp...</a></h3>
+						</header>							
+					</article>
+				
+					<article>
+						<a href="{% url 'About' %}" class="image featured"><img src='{% static "index/images/AboutUs1.jpg" %}' alt="" /></a>
+						<header>
+							<h3><a href="{% url 'About' %}">About...</a></h3>
+						</header>							
+					</article>
+				
+					<article>
+						<a href="{% url 'Developers' %}" class="image featured"><img src='{% static "index/images/Developer1.jpg" %}' alt="" /></a>
+						<header>
+							<h3><a href="#">Developer...</a></h3>
+						</header>							
+					</article>
+				
+					<article>
+						<a href="{% url 'Login' %}" class="image featured"><img src='{% static "index/images/Login2.jpg" %}' alt="" /></a>
+						<header>
+							<h3><a href="{% url 'Login' %}">Login or SignUp...</a></h3>
+						</header>							
+					</article>
+
+					<article>
+						<a href="{% url 'About' %}" class="image featured"><img src='{% static "index/images/AboutUs2.jpg" %}' alt="" /></a>
+						<header>
+							<h3><a href="{% url 'About' %}">About...</a></h3>
+						</header>							
+					</article>
+				
+					<article>
+						<a href="{% url 'Developers' %}" class="image featured"><img src='{% static "index/images/Developer2.jpg" %}' alt="" /></a>
+						<header>
+							<h3><a href="#">Developer...</a></h3>
+						</header>							
+					</article>
+				
+				</div>
+			</section>
+	</body>
+</html>

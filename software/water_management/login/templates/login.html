@@ -1,0 +1,85 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Login/SignUp</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700|Abril+Fatface" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href='{% static "login/css/normalize.css" %}' />
+		<link rel="stylesheet" type="text/css" href='{% static "login/css/demo.css" %}' />
+		<link rel="stylesheet" type="text/css" href='{% static "login/css/pater.css" %}' />
+		<link rel="stylesheet" type="text/css" href='{% static "login/css/component.css" %}' />
+	</head>
+	<body class="loading">
+		<main>
+			<section class="content content--c1">
+				<a href="#" class="tilter tilter--1">
+					<figure class="tilter__figure">
+						<img class="tilter__image" src='{% static "login/img/login.jpg" %}'/>
+						<figcaption class="tilter__caption">
+							<h3 class="tilter__title">Login /<br> Sign In</h3>
+						</figcaption>
+						<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
+							<path d="M20.5,20.5h260v375h-260V20.5z" />
+						</svg>
+					</figure>
+				</a>
+				<a href="#" class="tilter tilter--1">
+					<figure class="tilter__figure">
+						<img class="tilter__image" src='{% static "login/img/SignUp.jpg" %}' />
+						<figcaption class="tilter__caption">
+							<h3 class="tilter__title">Sign up</h3>
+						</figcaption>
+						<svg class="tilter__deco tilter__deco--lines" viewBox="0 0 300 415">
+							<path d="M20.5,20.5h260v375h-260V20.5z" />
+						</svg>
+					</figure>
+				</a>
+			</section>
+		</main>
+		<script src='{% static "login/js/imagesloaded.pkgd.min.js" %}'></script>
+		<script src='{% static "login/js/anime.min.js" %}'></script>
+		<script src='{% static "login/js/main.js" %}'></script>
+		<script>
+		(function() {
+			var tiltSettings = [
+			{
+				movement: {
+					imgWrapper : {
+						translation : {x: 10, y: 10, z: 30},
+						rotation : {x: 0, y: -10, z: 0},
+						reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+					},
+					lines : {
+						translation : {x: 10, y: 10, z: [0,70]},
+						rotation : {x: 0, y: 0, z: -2},
+						reverseAnimation : {duration : 2000, easing : 'easeOutExpo'}
+					},
+					caption : {
+						rotation : {x: 0, y: 0, z: 2},
+						reverseAnimation : {duration : 200, easing : 'easeOutQuad'}
+					},
+				}
+			}];
+
+			function init() {
+				var idx = 0;
+				[].slice.call(document.querySelectorAll('a.tilter')).forEach(function(el, pos) { 
+					idx = pos%2 === 0 ? idx+1 : idx;
+					new TiltFx(el, tiltSettings[idx-1]);
+				});
+			}
+
+			// Preload all images.
+			imagesLoaded(document.querySelector('main'), function() {
+				document.body.classList.remove('loading');
+				init();
+			});
+
+
+			
+		})();
+		</script>
+	</body>
+</html>
