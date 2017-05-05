@@ -17,7 +17,7 @@ def bill(request):
 	db.close()
 	smtpObj = smtplib.SMTP('smtp.gmail.com', 587)
 	smtpObj.starttls()
-	smtpObj.login('sriharsha.g15@iiits.in', 'Sri@CyberEye')
+	smtpObj.login('SenderEmail', 'SenderPassword')
 
-	smtpObj.sendmail('sriharsha.g15@iiits.in', 'soham.m15@iiits.in', str(msg1))
+	smtpObj.sendmail('SenderEmail', 'ReceiverEmail', str(msg1))
 	return render(request,'bill.html')
