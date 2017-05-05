@@ -35,12 +35,17 @@ INSTALLED_APPS = [
     'about.apps.AboutConfig',
     'index.apps.IndexConfig',
     'developers.apps.DevelopersConfig',
+    'signup.apps.SignupConfig',
+    'signin.apps.SigninConfig',
+    'profilepage.apps.ProfilepageConfig',
+    'bill.apps.BillConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    "geoposition",
 ]
 
 MIDDLEWARE = [
@@ -78,10 +83,24 @@ WSGI_APPLICATION = 'water_management.wsgi.application'
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
 
 DATABASES = {
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'mysql.connector.django',
+        'NAME': 'watermeter',
+        'USER': 'water_consumer',
+        'PASSWORD': 'test1234',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
     }
+}
+
+GEOPOSITION_MAP_OPTIONS = {
+    'minZoom': 3,
+    'maxZoom': 15,
+}
+
+GEOPOSITION_MARKER_OPTIONS = {
+    'cursor': 'move'
 }
 
 
@@ -122,6 +141,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
 #STATIC_ROOT=os.path.join(BASE_DIR,'static_root')
 
 ALLOWED_HOSTS=[u'127.0.0.1',u'watermanagement.com']
+
+GEOPOSITION_GOOGLE_MAPS_API_KEY = 'AIzaSyASp1D7WT2m_N9hg22OanKw5kBd2ikq31s'

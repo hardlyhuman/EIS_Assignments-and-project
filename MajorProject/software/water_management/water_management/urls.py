@@ -9,6 +9,10 @@ urlpatterns = [
 	url(r'^login/',include('login.urls')),
 	url(r'^about/',include('about.urls')),
 	url(r'^developers/',include('developers.urls')),
+	url(r'^signup/',include('signup.urls')),
+	url(r'^signin/',include('signin.urls')),
+	url(r'^profilepage/',include('profilepage.urls')),
+	url(r'^bill/',include('bill.urls')),
 
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
